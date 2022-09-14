@@ -1,0 +1,11 @@
+xorg
+x11-xserver-utils
+xserver-xorg-video-fbdev
+xserver-xorg-video-fbturbo
+fonts-noto-color-emoji
+feh
+gnome-themes-standard
+xdotool
+vim
+libreadline-dev
+libreadline8

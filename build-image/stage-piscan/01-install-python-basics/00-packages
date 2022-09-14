@@ -1,0 +1,23 @@
+python-setuptools
+python-dev
+pkg-config
+#python-pip
+build-essential
+#python-pil
+git-core
+dbus
+udisks2
+liblua5.2-0
+lua5.2
+liblua5.2-dev
+libusb-dev
+#python-dbus
+libdbus-1-dev
+libdbus-glib-1-dev
+# Needed for pillow:
+# https://www.piwheels.org/project/Pillow/
+liblcms2-2
+libopenjp2-7
+libwebpmux3
+libjpeg9-dev
+#libjpeg62-turbo-dev

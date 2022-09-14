@@ -1,0 +1,9 @@
+IMG_NAME='pi-scan'
+RELEASE='bullseye'
+LOCALE_DEFAULT='en_US.UTF-8'
+KEYBOARD_LAYOUT='English (US)'
+KEYBOARD_KEYMAP='us'
+TIMEZONE_DEFAULT='America/Chicago'
+STAGE_LIST='stage0 stage1 stage2 stage-piscan'
+FIRST_USER_PASS=' '
+DISABLE_FIRST_BOOT_USER_RENAME=1

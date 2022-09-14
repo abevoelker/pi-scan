@@ -66,6 +66,19 @@ Recommended settings for scanning with an Archivist Quill or Archivist using a N
 - AF-area mode: Auto-area
 - Zoom: Zoom in until all four edges of the platen are just visible. Note that the Nikon 1 J5 loses the zoom setting on power off, so this must be set every session and you may end up with a slightly different zoom value from session to session. For this reason, it is a good idea to scan a whole book in a single session rather than splitting it between sessions.
 
+# Image builds
+
+Raspberry Pi images can be built locally with the `build.sh` script. Supported input options are:
+
+* `-a` / `--arch` - Either `arm32` or `arm64` (default: `arm32`)
+* `-i` / `--input` - Either `mouse` or `touch` (default: `mouse`)
+
+Example:
+
+```
+./build.sh -a arm64 -i mouse
+```
+
 # Download
 
 Both Raspberry Pi 2 and Raspberry Pi 3 are supported. There are two variants. One version supports mouse input and any HDMI screen. The other version supports the official Raspberry Pi touch screen:
