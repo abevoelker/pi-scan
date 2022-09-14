@@ -26,6 +26,7 @@ jobs:
           keyboard-layout: English (US)
           locale: en_US.UTF-8
           timezone: America/Chicago
+          username: 'pi'
           password: ' '
           stage-list: stage0 stage1 stage2 ./build-image/stage-piscan
           pi-gen-version: ${{ matrix.build_arch == 'arm32' && 'master' || 'arm64' }}
