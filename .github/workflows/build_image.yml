@@ -30,7 +30,7 @@ jobs:
           stage-list: stage0 stage1 stage2 ./build-image/stage-piscan
           pi-gen-version: ${{ matrix.build_arch == 'arm32' && 'master' || 'arm64' }}
           #verbose-output: true
-          pi-gen-dir: ${{ github.workspace }}/pi-gen
+          pi-gen-dir: ${{ github.workspace }}/pi-gennnn
       - uses: actions/upload-artifact@v3
         with:
           name: pi-scan-${{ matrix.build_input }}-${{ matrix.build_arch }}
