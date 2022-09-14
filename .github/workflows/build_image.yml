@@ -12,6 +12,7 @@ jobs:
     env:
       BUILD_INPUT: ${{ matrix.build_input }}
     steps:
+      - uses: actions/checkout@v2
       - run: |
           cp -a "config/${BUILD_INPUT}.ini" "build-image/stage-piscan/04-install-setup/files/config.ini"
       - uses: usimd/pi-gen-action@v1
