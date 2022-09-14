@@ -1,0 +1,36 @@
+name: Build image
+on: workflow_dispatch
+
+jobs:
+  build_image:
+    strategy:
+      matrix:
+        build_input: [mouse, touch]
+        build_arch: [arm32, arm64]
+    name: Build Pi Scan image
+    runs-on: ubuntu-latest
+    env:
+      BUILD_INPUT: ${{ matrix.build_input }}
+    steps:
+      - run: |
+          cp -a "config/${BUILD_INPUT}.ini" "build-image/stage-piscan/04-install-setup/files/config.ini"
+      - uses: usimd/pi-gen-action@v1
+        id: build
+        with:
+          disable-first-boot-user-rename: 1
+          export-last-stage-only: true
+          hostname: raspberrypi
+          image-name: 'pi-scan'
+          keyboard-keymap: us
+          keyboard-layout: English (US)
+          locale: en_US.UTF-8
+          timezone: America/Chicago
+          password: ' '
+          pi-gen-version: master
+          stage-list: stage0 stage1 stage2 ./build-image/stage-piscan
+          pi-gen-version: ${{ matrix.build_arch == 'arm32' && 'master' || 'arm64' }}
+          verbose-output: true
+      - uses: actions/upload-artifact@v3
+        with:
+          name: pi-scan-${{ matrix.build_input }}-${{ matrix.build_arch }}
+          path: ${{ steps.build.outputs.image-path }}
