@@ -29,7 +29,8 @@ jobs:
           password: ' '
           stage-list: stage0 stage1 stage2 ./build-image/stage-piscan
           pi-gen-version: ${{ matrix.build_arch == 'arm32' && 'master' || 'arm64' }}
-          #verbose-output: true
+          # these two options are just for debugging the GitHub Action failure:
+          verbose-output: true
           pi-gen-dir: ${{ github.workspace }}/pi-gennnn
       - uses: actions/upload-artifact@v3
         with:
