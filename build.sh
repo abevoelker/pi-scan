@@ -38,6 +38,12 @@ INPUT="${INPUT:-mouse}"
 ARCH="${ARCH:-arm32}"
 
 # Clone Pi-Gen
+if sudo mount | grep -q "$pi_gen_path"
+then
+  printf "Error clearing previous pi-gen install. You have to manually unmount everything under $pi_gen_path first:\n\n";
+  sudo mount | grep -h "$pi_gen_path"
+  exit 4
+fi
 sudo rm -rf "$pi_gen_path"
 if [ "$ARCH" == "arm32" ]; then
   git clone --depth 1 https://github.com/RPI-Distro/pi-gen.git "$pi_gen_path"
