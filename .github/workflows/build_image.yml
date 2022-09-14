@@ -1,4 +1,4 @@
-name: Build image
+name: Build Pi Scan image
 on: workflow_dispatch
 
 jobs:
